@@ -1,0 +1,48 @@
+interface Game
+{
+	void play();
+}
+
+class Cricket implements Game
+{
+	public void play()
+	{
+		System.out.println("play in Cricket");
+	}
+}
+
+class Chess implements Game
+{
+	public void play()
+	{
+		System.out.println("play in Chess");
+	}
+}
+
+class Football implements Game
+{
+	public void play()
+	{
+		System.out.println("play in Football");
+	}
+}
+
+class Generic <T extends Game>
+{
+	T ob;
+	public void caller(T ob)
+	{
+		ob.play();
+	}	
+}
+
+public class Eight {
+
+	public static void main(String[] args) {
+		Generic<Game> g1 = new Generic<Game>();
+		
+		g1.caller(new Football());
+		g1.caller(new Cricket());
+		g1.caller(new Chess());
+	}
+}

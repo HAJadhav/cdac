@@ -1,0 +1,32 @@
+import java.util.*;
+import java.util.Map.Entry;
+
+public class Nine {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Map<String,String> icc = new HashMap<String,String>();
+		
+		icc.put("1", "Rohit Sharma");
+		icc.put("2", "Virat Kohli");
+		icc.put("3", "Sachin Tendulkar");
+		icc.put("4", "Shardul Thakur");
+		icc.put("5", "Dravid");
+		
+		Set<Entry<String,String>> icc_set = icc.entrySet();
+		Iterator<Entry<String,String>> itr = icc_set.iterator();
+		
+		System.out.println("Enter rank: ");
+		
+		String rnk = sc.next();
+		
+		while(itr.hasNext())
+		{
+			Map.Entry<String, String> entry = (Entry<String, String>)itr.next();
+			if(entry.getKey().equals(rnk)) {
+				System.out.println(entry.getValue());
+			}
+		}
+	}
+}
